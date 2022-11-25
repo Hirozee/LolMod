@@ -1,0 +1,42 @@
+{
+	"tristana_ambient_1": {
+		"category": "entity",
+		"subtitle": "tristana_ambient_1.sub",
+		"sounds": [
+			{
+				"name": "lolmod:entity/tristana/tristana_ambient_1",
+				"stream": true
+			}
+		]
+	},
+	"tristana_ambient_2": {
+		"category": "entity",
+		"subtitle": "tristana_ambient_2.sub",
+		"sounds": [
+			{
+				"name": "lolmod:entity/tristana/tristana_ambient_2",
+				"stream": true
+			}
+		]
+	},
+	"tristana_ambient_3": {
+		"category": "entity",
+		"subtitle": "tristana_ambient_3.sub",
+		"sounds": [
+			{
+				"name": "lolmod:entity/tristana/tristana_ambient_3",
+				"stream": true
+			}
+		]
+	},
+	"tristana_ambient_4": {
+		"category": "entity",
+		"subtitle": "tristana_ambient_4.sub",
+		"sounds": [
+			{
+				"name": "lolmod:entity/tristana/tristana_ambient_4",
+				"stream": true
+			}
+		]
+	}
+}

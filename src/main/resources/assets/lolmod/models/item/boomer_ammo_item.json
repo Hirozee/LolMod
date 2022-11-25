@@ -1,0 +1,42 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [20, 8],
+	"textures": {
+		"0": "lolmod:items/booomer_ammo_item",
+		"particle": "booomer_ammo_entity"
+	},
+	"elements": [
+		{
+			"from": [6, 6, 5],
+			"to": [10, 10, 11],
+			"faces": {
+				"north": {"uv": [0, 8, 3.2, 16], "texture": "#0"},
+				"east": {"uv": [3.2, 0, 8, 8], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [8, 8, 11.2, 16], "texture": "#0"},
+				"west": {"uv": [3.2, 8, 8, 16], "texture": "#0"},
+				"up": {"uv": [8, 0, 12.8, 8], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [11.2, 8, 16, 16], "rotation": 270, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [90, 0, 0],
+			"translation": [0, -2, 0],
+			"scale": [0.75, 0.75, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [90, 0, 0],
+			"translation": [0, -2, 0],
+			"scale": [0.75, 0.75, 1]
+		},
+		"gui": {
+			"rotation": [30, 130, 0],
+			"scale": [2, 2, 2]
+		},
+		"fixed": {
+			"rotation": [0, -90, 0],
+			"scale": [2, 2, 2]
+		}
+	}
+}
