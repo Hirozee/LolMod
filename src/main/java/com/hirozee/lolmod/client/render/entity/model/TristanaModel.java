@@ -1,5 +1,6 @@
 package com.hirozee.lolmod.client.render.entity.model;
 
+import com.hirozee.lolmod.common.entity.TristanaEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
@@ -16,26 +17,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.TamableAnimal;
 
-public class TristanaModel<T extends Entity> extends EntityModel<T> {
+public class TristanaModel extends EntityModel<TristanaEntity> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("lolmod", "tristana"), "main");
 	private final ModelPart body;
 	private final ModelPart head;
-	private final ModelPart armL;
-	private final ModelPart armR;
-	private final ModelPart legL;
-	private final ModelPart legR;
-	private final ModelPart arms;
-	private final ModelPart legs;
 
 	public TristanaModel(ModelPart root) {
 		this.body = root.getChild("body");
 		this.head = root.getChild("head");
-		this.armL = root.getChild("armL");
-		this.armR = root.getChild("armR");
-		this.legL = root.getChild("legL");
-		this.legR = root.getChild("legR");
-		this.arms = root.getChild("arms");
-		this.legs = root.getChild("legs");
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -76,31 +65,31 @@ public class TristanaModel<T extends Entity> extends EntityModel<T> {
 
 
 	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(TristanaEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.head.xRot = headPitch * 0.017453292F;
 		this.head.yRot = netHeadYaw * 0.017453292F;
-		this.armL.xRot = limbSwing * 1.3324F;
+		/*this.armL.xRot = limbSwing * 1.3324F;
 		this.armR.xRot = limbSwing * 1.3324F;
 		this.legL.xRot = limbSwing * 1.3324F;
-		this.legR.xRot = limbSwing * 1.3324F;
+		this.legR.xRot = limbSwing * 1.3324F;*/
 	}
 
 
-	public void prepareMobModel(T p_212843_1_, float p_212843_2_, float p_212843_3_, float p_212843_4_) {
+	public void prepareMobModel(TristanaEntity p_212843_1_, float p_212843_2_, float p_212843_3_, float p_212843_4_) {
 		if (((TamableAnimal)p_212843_1_).isInSittingPose()) {
 			this.head.setPos(0.0F, 15.0F, 0.0F);
 			this.body.setPos(0.0F, 15.0F, 0.0F);
-			this.arms.xRot = -0.2F;
+			/*this.arms.xRot = -0.2F;
 			this.legs.xRot = -1.6F;
 			this.legL.zRot = -0.4F;
-			this.legR.zRot = 0.4F;
+			this.legR.zRot = 0.4F;*/
 		} else {
 			this.body.setPos(0.0F, 8.0F, 0.0F);
 			this.head.setPos(0.0F, 8.0F, 0.0F);
-			this.arms.xRot = 0.0F;
+			/*this.arms.xRot = 0.0F;
 			this.legs.xRot = 0.0F;
 			this.legL.zRot = 0.0F;
-			this.legR.zRot = 0.0F;
+			this.legR.zRot = 0.0F;*/
 		} 
 	}
 
@@ -110,5 +99,5 @@ public class TristanaModel<T extends Entity> extends EntityModel<T> {
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-	}	
+	}
 }

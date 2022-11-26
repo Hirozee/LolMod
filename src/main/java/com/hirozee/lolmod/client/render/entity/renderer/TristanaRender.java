@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-public class TristanaRender <T extends TristanaEntity> extends MobRenderer<T, TristanaModel<T>> {
+public class TristanaRender extends MobRenderer<TristanaEntity, TristanaModel> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation("lolmod", "textures/entity/tristana.png");
 
@@ -19,3 +19,4 @@ public class TristanaRender <T extends TristanaEntity> extends MobRenderer<T, Tr
 		return TEXTURE;
 	}
 }
+

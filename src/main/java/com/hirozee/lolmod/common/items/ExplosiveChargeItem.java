@@ -26,10 +26,11 @@ public class ExplosiveChargeItem extends Item {
 	public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
 			ItemStack stack = playerIn.getMainHandItem();
 			if(!worldIn.isClientSide) {
-				ExplosiveChargeEntity explosiveCharge = new ExplosiveChargeEntity(playerIn, worldIn);
+				ExplosiveChargeEntity explosiveCharge = new ExplosiveChargeEntity(worldIn, playerIn);
 				explosiveCharge.setItem(stack);
+				explosiveCharge.shootFromRotation((Entity)playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0F, 1.0F, 0.0F);
 				explosiveCharge.setPos(playerIn.getX(), playerIn.getY() + 1.5D, playerIn.getZ());
-				worldIn.addFreshEntity(playerIn);	
+				worldIn.addFreshEntity((Entity)explosiveCharge);	
 			}
 			return InteractionResultHolder.success(playerIn.getItemInHand(handIn));
 		}

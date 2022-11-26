@@ -3,11 +3,13 @@ package com.hirozee.lolmod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.hirozee.lolmod.common.entity.TristanaEntity;
 import com.hirozee.lolmod.common.items.CustomSpawnEggItem;
 import com.hirozee.lolmod.core.init.EntityTypesInit;
 import com.hirozee.lolmod.core.init.ItemInit;
 import com.hirozee.lolmod.core.init.SoundInit;
 
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -77,6 +79,7 @@ public class LolMod {
 	  DeferredWorkQueue.lookup(() -> GlobalEntityTypeAttributes.put((EntityType<? extends LivingEntity>)EntityTypesInit.TRISTANA.get(), TristanaEntity.setAttributes().build()));
 	  
   }*/
+
   public static class LolModGroup extends CreativeModeTab {
 	  public LolModGroup(String label) {
 		  super("LolMod");

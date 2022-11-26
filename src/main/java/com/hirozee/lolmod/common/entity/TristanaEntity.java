@@ -1,13 +1,16 @@
 package com.hirozee.lolmod.common.entity;
 
+import com.hirozee.lolmod.core.init.EntityTypesInit;
 import com.hirozee.lolmod.core.init.SoundInit;
 import java.util.Random;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier.Builder;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -49,10 +52,9 @@ public class TristanaEntity extends TamableAnimal {
     setTame(false);
   }
   
-  public static Builder setAttributes() {
-    return createMobAttributes()
-      .add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.25D).add(Attributes.ATTACK_DAMAGE, 4.0D);
-  }
+   public static AttributeSupplier.Builder createAttributes() {
+      return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.25D).add(Attributes.ATTACK_DAMAGE, 4.0D);
+   }
   
   protected void registerGoals() {
     super.registerGoals();
@@ -202,9 +204,8 @@ public InteractionResult mobInteract(Player playerIn, InteractionHand handIn) {
     return false;
   }
 
-@Override
-public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
+	    return EntityTypesInit.TRISTANA.get().create(level);
+	}
 }

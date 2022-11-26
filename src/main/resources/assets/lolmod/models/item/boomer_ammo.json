@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [20, 8],
 	"textures": {
-		"0": "lolmod:items/booomer_ammo_item",
+		"0": "lolmod:items/booomer_ammo",
 		"particle": "booomer_ammo_entity"
 	},
 	"elements": [
